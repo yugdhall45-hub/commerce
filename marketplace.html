@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Marketplace – FinVault</title>
+    <meta name="description"
+        content="Browse and apply for personal loans, home loans, credit cards, insurance and investment plans on FinVault marketplace." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@400;600;700;800&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/marketplace.css" />
+</head>
+
+<body>
+    <!-- Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="nav-logo">
+                <div class="logo-icon">₹</div>
+                <span>Fin<span class="gold">Vault</span></span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="marketplace.html" class="active">Marketplace</a></li>
+                <li><a href="compare.html">Compare</a></li>
+                <li><a href="calculators.html">Calculators</a></li>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="admin.html">Admin</a></li>
+            </ul>
+            <div class="nav-actions">
+                <a href="dashboard.html" class="btn btn-outline">Sign In</a>
+                <a href="dashboard.html" class="btn btn-primary">Get Started</a>
+            </div>
+            <button class="hamburger" id="hamburger" aria-label="Toggle Menu">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Page Header -->
+    <div class="page-header">
+        <div class="container page-header-content">
+            <div class="section-badge">Product Marketplace</div>
+            <h1>Explore <span class="gradient-text">500+ Financial Products</span></h1>
+            <p>Find the perfect loan, card, insurance or investment plan tailored to your needs</p>
+        </div>
+    </div>
+
+    <!-- Main Marketplace -->
+    <section class="marketplace-section section">
+        <div class="container">
+            <!-- Filter + Search Bar -->
+            <div class="marketplace-header">
+                <div class="search-bar">
+                    <svg class="search-icon" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+                        viewBox="0 0 24 24">
+                        <circle cx="11" cy="11" r="8" />
+                        <path d="M21 21l-4.35-4.35" />
+                    </svg>
+                    <input type="text" id="searchInput" class="search-input"
+                        placeholder="Search products, banks, features..." />
+                </div>
+                <div class="filter-sort">
+                    <select class="form-control" id="sortSelect" style="width:200px">
+                        <option value="popular">Sort: Most Popular</option>
+                        <option value="rate-low">Interest Rate (Low to High)</option>
+                        <option value="rate-high">Interest Rate (High to Low)</option>
+                        <option value="newest">Newest First</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="marketplace-body">
+                <!-- Sidebar Filters -->
+                <aside class="filters-sidebar" id="filtersSidebar">
+                    <div class="filters-header">
+                        <h3>Filters</h3>
+                        <button class="clear-filters" id="clearFilters">Clear All</button>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Category</h4>
+                        <div class="filter-options" id="categoryFilters">
+                            <label class="filter-option active" data-value="all">
+                                <input type="radio" name="category" value="all" checked hidden />
+                                All Products <span class="filter-count">51</span>
+                            </label>
+                            <label class="filter-option" data-value="personal-loan">
+                                <input type="radio" name="category" value="personal-loan" hidden />
+                                Personal Loans <span class="filter-count">12</span>
+                            </label>
+                            <label class="filter-option" data-value="home-loan">
+                                <input type="radio" name="category" value="home-loan" hidden />
+                                Home Loans <span class="filter-count">8</span>
+                            </label>
+                            <label class="filter-option" data-value="credit-card">
+                                <input type="radio" name="category" value="credit-card" hidden />
+                                Credit Cards <span class="filter-count">15</span>
+                            </label>
+                            <label class="filter-option" data-value="insurance">
+                                <input type="radio" name="category" value="insurance" hidden />
+                                Insurance <span class="filter-count">10</span>
+                            </label>
+                            <label class="filter-option" data-value="investment">
+                                <input type="radio" name="category" value="investment" hidden />
+                                Investments <span class="filter-count">6</span>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Interest Rate Range</h4>
+                        <div class="rate-range">
+                            <div class="rate-inputs">
+                                <input type="number" class="form-control" id="minRate" placeholder="Min %" value="7"
+                                    style="width:80px" />
+                                <span>—</span>
+                                <input type="number" class="form-control" id="maxRate" placeholder="Max %" value="36"
+                                    style="width:80px" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Bank / Lender</h4>
+                        <div class="filter-options">
+                            <label class="filter-check"><input type="checkbox" value="hdfc" /> HDFC Bank</label>
+                            <label class="filter-check"><input type="checkbox" value="sbi" checked /> SBI</label>
+                            <label class="filter-check"><input type="checkbox" value="icici" /> ICICI Bank</label>
+                            <label class="filter-check"><input type="checkbox" value="axis" /> Axis Bank</label>
+                            <label class="filter-check"><input type="checkbox" value="kotak" /> Kotak Mahindra</label>
+                            <label class="filter-check"><input type="checkbox" value="pnb" /> PNB</label>
+                        </div>
+                    </div>
+
+                    <div class="filter-group">
+                        <h4>Loan Amount</h4>
+                        <div class="amount-options">
+                            <button class="amount-btn active" data-val="all">Any</button>
+                            <button class="amount-btn" data-val="1-5L">₹1–5 Lakh</button>
+                            <button class="amount-btn" data-val="5-20L">₹5–20 Lakh</button>
+                            <button class="amount-btn" data-val="20L+">₹20 Lakh+</button>
+                        </div>
+                    </div>
+
+                    <button class="btn btn-primary" style="width:100%;justify-content:center;margin-top:8px"
+                        id="applyFilters">Apply Filters</button>
+                </aside>
+
+                <!-- Products Grid -->
+                <div class="products-main">
+                    <div class="products-toolbar">
+                        <span class="products-count" id="productsCount">Showing 51 results</span>
+                        <div class="view-toggle">
+                            <button class="view-btn active" id="gridView" title="Grid View">⊞</button>
+                            <button class="view-btn" id="listView" title="List View">☰</button>
+                        </div>
+                    </div>
+
+                    <div class="products-list" id="productsList">
+                        <!-- Products rendered by JS -->
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination" id="pagination">
+                        <button class="page-btn active">1</button>
+                        <button class="page-btn">2</button>
+                        <button class="page-btn">3</button>
+                        <button class="page-btn">4</button>
+                        <span class="page-ellipsis">...</span>
+                        <button class="page-btn">12</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Detail Modal -->
+    <div class="modal-overlay" id="productModal">
+        <div class="modal" id="modalContent">
+            <button class="modal-close" id="modalClose">✕</button>
+            <div id="modalBody"><!-- Filled by JS --></div>
+        </div>
+    </div>
+
+    <!-- Toast -->
+    <div class="toast-container" id="toastContainer"></div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="nav-logo">
+                        <div class="logo-icon">₹</div><span>Fin<span class="gold">Vault</span></span>
+                    </a>
+                    <p>India's most trusted fintech marketplace.</p>
+                    <div class="footer-socials">
+                        <a href="#">𝕏</a><a href="#">in</a><a href="#">📷</a><a href="#">▶</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4>Products</h4>
+                    <ul>
+                        <li><a href="marketplace.html?cat=personal-loan">Personal Loans</a></li>
+                        <li><a href="marketplace.html?cat=home-loan">Home Loans</a></li>
+                        <li><a href="marketplace.html?cat=credit-card">Credit Cards</a></li>
+                        <li><a href="marketplace.html?cat=insurance">Insurance</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Tools</h4>
+                    <ul>
+                        <li><a href="calculators.html?tab=emi">EMI Calculator</a></li>
+                        <li><a href="calculators.html?tab=sip">SIP Calculator</a></li>
+                        <li><a href="compare.html">Product Comparator</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>Company</h4>
+                    <ul>
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2025 FinVault Pvt. Ltd. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/app.js"></script>
+    <script src="js/marketplace.js"></script>
+</body>
+
+</html>
